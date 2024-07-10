@@ -51,8 +51,25 @@ exports.AddtoCart = async(req,res)=>{
 }
 
 
-// get carts value
+// getcartsvalue
 
-exports.getCartsvalue = async(req,res)=>{
-   
+exports.getCartsValue = async(req,res)=>{
+   try {
+      const getCarts = await cartsdb.aggregate([
+         {
+            $match:{userid:req.userMainId}
+         },
+         {
+            $lookup:{
+               from:"productsmodels",
+               localField:"productid",
+               foreignField:"_id",
+               as:"productDetails"
+            }
+         }
+      ]);
+      res.status(200).json(getCarts)
+   } catch (error) {
+      res.status(400).json(error)
+   }   
 }
