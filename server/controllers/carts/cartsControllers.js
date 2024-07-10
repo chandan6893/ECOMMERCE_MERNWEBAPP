@@ -49,3 +49,10 @@ exports.AddtoCart = async(req,res)=>{
    }
     // console.log("req.params",req.params)
 }
+
+
+// get carts value
+
+exports.getCartsvalue = async(req,res)=>{
+   
+}
