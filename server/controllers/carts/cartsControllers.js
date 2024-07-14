@@ -73,3 +73,8 @@ exports.getCartsValue = async(req,res)=>{
       res.status(400).json(error)
    }   
 }
+
+// removeSingleitm
+exports.removeSingleitm = async(req,res)=>{
+   
+}
