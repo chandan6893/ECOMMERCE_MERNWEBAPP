@@ -6,6 +6,8 @@ const userauthenticate = require("../../middleware/user/userauthenticate")
 router.post("/addtocart/:id",userauthenticate,cartsControllers.AddtoCart);
 router.get("/getcarts",userauthenticate,cartsControllers.getCartsValue);
 router.delete("/removesingleitem/:id",userauthenticate,cartsControllers.removeSingleitm);
+router.delete("/removeiteams/:id",userauthenticate,cartsControllers.removeAlliteam);
+router.delete("/removecartdata",userauthenticate,cartsControllers.DeleteCartsData)
 
 
 
