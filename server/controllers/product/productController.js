@@ -138,14 +138,37 @@ exports.DeleteProducts = async ( req,res ) => {
     }
 
 }
+// productreview
+
+
+
+
+
+
 
 exports.productreview = async(req,res) =>{
-    try{
-        
-    }catch(error){
+    const { productid } = req.params;
+    const { username,rating,description } = req.body;
 
+    if(!username || !rating || !description || !productid){
+        res.status(400).json({error:"All Field is Required"});
+    }
+    try{
+        const productreviewadd = new productreviewdb({
+            userid:req.userMainId,productid,username,rating,description
+        });
+
+
+        await productreviewadd.save(productreviewadd);
+
+
+        res.status(200).json(productreviewadd);
+
+
+    }catch(error){
+        res.status(400).json(error);
     }
 }
 
-// productreview
+
 
