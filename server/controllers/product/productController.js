@@ -1,6 +1,9 @@
 const categorydb = require("../../model/product/productCategoryModel")
 const cloudinary = require("../../Cloudinary/cloudinary")
-const productsdb = require("../../model/product/ProductModel")
+const productsdb = require("../../model/product/ProductModel");
+const productreviewdb = require("../../model/product/productreviewModel");
+
+
 // add  category
 exports.AddCategory = async(req,res)=>{
     const {categoryname,description} = req.body;
@@ -135,3 +138,14 @@ exports.DeleteProducts = async ( req,res ) => {
     }
 
 }
+
+exports.productreview = async(req,res) =>{
+    try{
+        
+    }catch(error){
+
+    }
+}
+
+// productreview
+
