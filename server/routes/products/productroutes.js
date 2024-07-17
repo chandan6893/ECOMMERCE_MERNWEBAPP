@@ -20,6 +20,8 @@ router.get("/getLatestProducts",productController.getLatestProducts);
 
 // product review api
 router.post("/productreview/:productid",userAuthenticate,productController.productreview);
+router.get("/getProductreview/:productid",productController.getproductreview);
+router.delete("/productreviewdelete/:reviewid",userAuthenticate,productController.DeleteProductreview);
 
 
 

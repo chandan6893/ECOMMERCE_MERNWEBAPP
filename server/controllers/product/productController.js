@@ -140,12 +140,6 @@ exports.DeleteProducts = async ( req,res ) => {
 }
 // productreview
 
-
-
-
-
-
-
 exports.productreview = async(req,res) =>{
     const { productid } = req.params;
     const { username,rating,description } = req.body;
@@ -170,5 +164,28 @@ exports.productreview = async(req,res) =>{
     }
 }
 
+
+// getproductreview
+exports.getproductreview = async(req,res)=>{
+    const { productid } = req.params;
+    try {
+        const getreview = await productreviewdb.find({productid:productid});
+        res.status(200).json(getreview);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+}
+
+
+// DeleteProductreview
+exports.DeleteProductreview = async(req,res)=>{
+    const { reviewid } = req.params;
+    try {
+        const reviewDelete = await productreviewdb.findByIdAndDelete({_id:reviewid});
+        res.status(200).json(reviewDelete);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+}
 
 
