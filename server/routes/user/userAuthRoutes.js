@@ -21,6 +21,6 @@ router.get("/forgotpassword/:id/:token",userController.forgotpasswordverify);
 router.put("/resetpassword/:id/:token",userController.resetpassword);
 
 // for admin
-router.get("getAlluser",adminauthenticate,userController.getAlluser);
+router.get("/getAlluser",adminauthenticate,userController.getAlluser);
 
 module.exports = router;

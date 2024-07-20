@@ -205,7 +205,7 @@ exports.getAlluser = async(req,res)=>{
         .limit(ITEM_PER_PAGE)
         .skip(skip)
         .sort({_id:-1});
-
+        
         res.status(200).json({
             Pagination:{
                 count,pageCount
@@ -213,6 +213,6 @@ exports.getAlluser = async(req,res)=>{
             usersdata
         })
     }catch(error){
-        res.status.json(error);
+        res.status(400).json(error);
     }
 }

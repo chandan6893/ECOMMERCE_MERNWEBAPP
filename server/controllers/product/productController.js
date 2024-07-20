@@ -1,5 +1,5 @@
-const categorydb = require("../../model/product/productCategoryModel")
-const cloudinary = require("../../Cloudinary/cloudinary")
+const categorydb = require("../../model/product/productCategoryModel");
+const cloudinary = require("../../Cloudinary/cloudinary");
 const productsdb = require("../../model/product/ProductModel");
 const productreviewdb = require("../../model/product/productreviewModel");
 
