@@ -216,3 +216,15 @@ exports.getAlluser = async(req,res)=>{
         res.status(400).json(error);
     }
 }
+
+// userDelete
+exports.userDelete = async(req,res) =>{
+    const { userid } = req.params;
+
+    try {
+        const deleteuser = await userDB.findByIdAndDelete({_id:userid});
+        res.status(200).json(deleteuser);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+}
